@@ -3,9 +3,9 @@
   /* colors */
   --primary-color: rgb(155,218,241);
   --secondary-color: rgb(0,0,0);
-  --tertiary-color: rgb(23, 2, 116);
+  --tertiary-color: rgb(116, 2, 2);
   --light-grey: rgb(247, 247, 247);
-  --dark-grey: rgb(41, 41, 41);
+  --dark-grey: rgb(31, 31, 31);
 
   /* sizes */
   --font-base: 18px;
