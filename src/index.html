@@ -5,25 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sleep Outside | Home</title>
     <link rel="stylesheet" href="/css/style.css" />
+    <script type="module" src="./js/main.js"></script>
   </head>
 
   <body>
-    <header class="divider">
-      <div class="logo">
-        <img src="/images/astronaut.svg" alt="astronaut for logo" />
-        <a href="/"> Space<span class="highlight">Image</span>Of<span class="highlight">The</span>Day</a>
-      </div>
-    </header>
+    <header class="divider" id="main-header"></header>
     <main class="divider">
       <div class="hero">
         <img
-          src="/images/banner-sm.jpg"
-          srcset="images/banner-sm.jpg 500w, images/banner.jpg"
+          src="../public/images/space_banner.jpg"
+          srcset="../public/images/space_banner.jpg 500w, ../public/images/space_banner_long.jpg"
           alt="image of a high mountain lake"
         />
+        <p>&copy;2026-04-04 <a href="https://apod.nasa.gov/apod/image/2604/art002e000192.jpg">https://apod.nasa.gov/apod/image/2604/art002e000192.jpg</a> </p>
+        <caption>From pole to pole our fair planet is captured in this snapshot from space, an evocative image from a window of the Orion spacecraft Integrity. From the spacecraft's perspective the Sun is moving behind Earth's bright limb along the lower right. Africa and the Iberian peninsula are in view on the pale blue planet's surface, while aurorae crown Earth's south and north poles at top right and bottom left. Commander Reid Wiseman took the historic picture on Artemis II mission flight day 2 (April 2), after the completion of the planned translunar injection burn. That burn boosted the spacecraft out of Earth orbit, sending Integrity and crew on a trajectory that will take them around the Moon and back again. That's a journey humans last made over 50 years ago.</caption>
         <div class="mission">
           <p>
-            Our mission is to provide you with place to save your favorite NASA images of the day.
+            Our mission is to provide you with place to save your favorite NASA
+            images of the day.
+          </p>
         </div>
       </div>
       <section>
@@ -32,9 +32,6 @@
         </div>
       </section>
     </main>
-    <footer>
-      &copy;2026 🚀 NASA Image of the Day 🚀 WDD 330 🚀 BYU-Idaho for BYU-Pathway
-      Worldwide Online
-    </footer>
+    <footer id="main-footer"></footer>
   </body>
 </html>
