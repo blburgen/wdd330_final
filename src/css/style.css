@@ -30,18 +30,12 @@ img {
 }
 
 header {
-  display: flex;
-  justify-content: space-between;
   padding: 0.5rem;
 }
-
-p {
-  padding: 0.75rem;
-}
-
+/* --------------Logo--------------- */
 .logo {
   line-height: 60px;
-  max-width: 370px;
+  width: 100vw;
   display: flex;
   flex: wrap;
   font-size: 30px;
@@ -51,11 +45,63 @@ p {
 .logo img {
   width: 60px;
   height: 60px;
+  z-index: 1;
+  animation: highlight 3s ease-out;
 }
 
 .logo a {
   text-decoration: none;
   color: var(--font-body);
+}
+
+@keyframes highlight {
+  0% {
+    transform: translateX(1000px) scaleX(-1) rotate(45deg);
+  }
+  90% {
+    transform: translateX(0px) scaleX(-1) rotate(45deg);
+  }
+  100% {
+    transform: translateY(0) scaleX(-1);
+  }
+}
+
+/* --------------End Logo--------------- */
+
+/* ------------ Navigation --------------- */
+.navigation {
+  margin: 0.5rem 0;
+}
+
+nav {
+  display: flex;
+  flex: wrap;
+  justify-content: space-between;
+}
+
+nav a {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  margin: 0 5px;
+  padding: 10px;
+  border: 2px solid var(--primary-color);
+  color: var(--secondary-color);
+  background-color: var(--light-grey);
+  border-radius: 1rem;
+  text-align: center;
+}
+
+nav a:hover {
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+  cursor: pointer;
+}
+
+/* ------------ End Navigation --------------- */
+
+p {
+  padding: 0.75rem;
 }
 
 .hero {
