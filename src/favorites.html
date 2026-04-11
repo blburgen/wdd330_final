@@ -10,8 +10,7 @@
       type="image/x-icon"
     />
     <link rel="stylesheet" href="/css/style.css" />
-    <!-- <script type="module" src="./js/main.js"></script> -->
-    <script type="module" src="./js/IOD.mjs"></script>
+    <script type="module" src="./js/main.js"></script>
   </head>
 
   <body>
@@ -19,17 +18,20 @@
     <main class="divider">
       <div class="hero">
         <img
-          id="hero"
           src="../images/space_banner.jpg"
+          srcset="
+            ../images/space_banner.jpg      500w,
+            ../images/space_banner_long.jpg
+          "
           alt="image of a high mountain lake"
         />
         <p>
-          &copy;<span id="copy">2026-04-04</span>
-          <a id="imagelink" href="https://apod.nasa.gov/apod/image/2604/art002e000192.jpg"
+          &copy;2026-04-04
+          <a href="https://apod.nasa.gov/apod/image/2604/art002e000192.jpg"
             >https://apod.nasa.gov/apod/image/2604/art002e000192.jpg</a
           >
         </p>
-        <p id="information">
+        <caption>
           From pole to pole our fair planet is captured in this snapshot from
           space, an evocative image from a window of the Orion spacecraft
           Integrity. From the spacecraft's perspective the Sun is moving behind
@@ -42,7 +44,7 @@
           sending Integrity and crew on a trajectory that will take them around
           the Moon and back again. That's a journey humans last made over 50
           years ago.
-        </p>
+        </caption>
         <div class="mission">
           <p>
             Our mission is to provide you with place to save your favorite NASA
@@ -52,7 +54,7 @@
       </div>
       <section>
         <div>
-          <button id="addToCart">Add to Favorites</button>
+          <button>Add to Favorites</button>
         </div>
       </section>
     </main>

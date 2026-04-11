@@ -1,3 +1,6 @@
+const baseURL = import.meta.env.VITE_SERVER_URL;
+import { getLocalStorage, setLocalStorage } from "./utils.mjs";
+
 function convertToJson(res) {
   if (res.ok) {
     return res.json();
@@ -7,17 +10,24 @@ function convertToJson(res) {
 }
 
 export default class ProductData {
-  constructor(category) {
-    this.category = category;
-    this.path = `../json/${this.category}.json`;
-  }
-  getData() {
-    return fetch(this.path)
-      .then(convertToJson)
-      .then((data) => data);
-  }
-  async findProductById(id) {
-    const products = await this.getData();
-    return products.find((item) => item.Id === id);
+  constructor() {}
+
+  async getData() {
+    const date = new Date().toISOString().slice(0,10);
+    let data;
+    if(getLocalStorage('today') === null){
+      const response = await fetch(baseURL);
+      console.log(response);
+      data = await convertToJson(response);
+      if(data.date == date){
+        console.log(data.explanation);
+      } else{
+        console.log("hi");
+      }
+      setLocalStorage('today', data);
+    } else {
+      data = getLocalStorage('today');
+    }
+    return data;
   }
 }
