@@ -115,6 +115,10 @@ p {
   background-color: white;
 }
 
+.hero img {
+  width: 100%;
+}
+
 /* utility classes */
 .highlight {
   color: var(--tertiary-color);

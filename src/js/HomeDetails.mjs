@@ -5,12 +5,14 @@ export default class HomeDetails {
   constructor(dataSource, listElement) {
     this.listElement = listElement;
     this.product = {};
+    this.solar = {};
     this.dataSource = dataSource;
   }
 
   async init() {
     // use the datasource to get the details for the current product. findProductById will return a promise! use await or .then() to process it
     this.product = await this.dataSource.getData();
+    this.solar = await this.dataSource.getSolarData();
     // the product details are needed before rendering the HTML
     this.renderProductDetails();
     // once the HTML is rendered, add a listener to the Add to Cart button
@@ -31,11 +33,11 @@ export default class HomeDetails {
   }
 
   renderProductDetails() {
-    productDetailsTemplate(this.product);
+    productDetailsTemplate(this.product, this.solar);
   }
 }
 
-function productDetailsTemplate(product) {
+function productDetailsTemplate(product, solar) {
   document.getElementById('hero').src = product.url;
   document.getElementById('hero').alt = product.title;
 
@@ -44,4 +46,14 @@ function productDetailsTemplate(product) {
   document.getElementById('imagelink').textContent = product.hdurl;
 
   document.getElementById('information').innerHTML = product.explanation;
+  if(solar){
+    document.getElementById('solar').innerHTML = `Last Solar Flare ID: ${solar.flrID}<br>
+    Begin Time: ${solar.beginTime}<br>
+    End Time: ${solar.endTime}<br>
+    Peak Time: ${solar.peakTime}<br>
+    Class Type: ${solar.classType}
+    `;
+  }
+ 
+
 }

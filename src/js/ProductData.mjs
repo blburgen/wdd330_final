@@ -1,4 +1,5 @@
 const baseURL = import.meta.env.VITE_SERVER_URL;
+const solarURL = import.meta.env.VITE_SERVER_URL2;
 import { getLocalStorage, setLocalStorage } from "./utils.mjs";
 
 function convertToJson(res) {
@@ -15,19 +16,23 @@ export default class ProductData {
   async getData() {
     const date = new Date().toISOString().slice(0,10);
     let data;
-    if(getLocalStorage('today') === null){
+    if(getLocalStorage('today') === null || getLocalStorage('today').date != date){
       const response = await fetch(baseURL);
-      console.log(response);
       data = await convertToJson(response);
-      if(data.date == date){
-        console.log(data.explanation);
-      } else{
-        console.log("hi");
-      }
       setLocalStorage('today', data);
     } else {
       data = getLocalStorage('today');
     }
     return data;
+  }
+
+  async getSolarData(){
+    const date = new Date().toISOString().slice(0,10);
+    const yesterday = new Date(Date.now() - 600000000).toISOString().slice(0,10);
+    let data;
+    const response = await fetch(`${solarURL}&startDate=${yesterday}&endDate=${date}`);
+    data = await convertToJson(response);
+    setLocalStorage('solar', data);
+    return data[data.length - 1];
   }
 }
