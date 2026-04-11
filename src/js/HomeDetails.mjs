@@ -21,9 +21,13 @@ export default class HomeDetails {
   }
 
   addProductToCart() {
-    const cartItems = getLocalStorage("so-cart") || [];
+    const cartItems = getLocalStorage("favorite-cart") || [];
+    for(let i = 0; i < cartItems.length; i++){
+      if(cartItems[i].date === this.product.date)
+        return;
+    };
     cartItems.push(this.product);
-    setLocalStorage("so-cart", cartItems);
+    setLocalStorage("favorite-cart", cartItems);
   }
 
   renderProductDetails() {
