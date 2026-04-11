@@ -39,8 +39,10 @@ export default class HomeDetails {
 
 function productDetailsTemplate(product, solar) {
   document.getElementById('hero').src = product.url;
-  document.getElementById('hero').alt = product.title;
+  const alternate = product.media_type + " of " + product.title;
+  document.getElementById('hero').alt = alternate;
 
+  document.getElementById('title').textContent = product.title;
   document.getElementById('copy').textContent = product.date;
   document.getElementById('imagelink').href = product.hdurl;
   document.getElementById('imagelink').textContent = product.hdurl;
