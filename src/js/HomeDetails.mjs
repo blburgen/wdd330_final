@@ -49,11 +49,11 @@ function productDetailsTemplate(product, solar) {
 
   document.getElementById('information').innerHTML = product.explanation;
   if(solar){
-    document.getElementById('solar').innerHTML = `Last Solar Flare ID: ${solar.flrID}<br>
-    Begin Time: ${solar.beginTime}<br>
-    End Time: ${solar.endTime}<br>
-    Peak Time: ${solar.peakTime}<br>
-    Class Type: ${solar.classType}
+    document.getElementById('solar').innerHTML = `<span class="bold">Last Solar Flare ID:</span> <br>${solar.flrID}<br><br>
+    <span class="bold">Begin Time:</span> ${solar.beginTime}<br>
+    <span class="bold">End Time:</span> ${solar.endTime}<br>
+    <span class="bold">Peak Time:</span> ${solar.peakTime}<br>
+    <span class="bold">Class Type:</span> ${solar.classType}
     `;
   }
  

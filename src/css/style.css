@@ -20,9 +20,26 @@
 }
 
 body {
+  box-sizing: border-box;
   font-family: var(--font-body);
   font-size: var(--font-base);
   color: var(--dark-grey);
+}
+
+@media screen and (min-width: 800px) {
+  .grid {
+    display: grid;
+    grid-template-columns: 5fr 2fr;
+  } 
+}
+
+aside {
+    padding: 10px;
+    align-content: center;
+  }
+
+.bold {
+  font-weight: 900;
 }
 
 img {
@@ -35,7 +52,7 @@ header {
 /* --------------Logo--------------- */
 .logo {
   line-height: 60px;
-  width: 100vw;
+  width: 100%;
   display: flex;
   flex: wrap;
   font-size: 30px;
@@ -136,6 +153,7 @@ button {
 }
 
 .divider {
+  padding-bottom: 1rem;
   border-bottom: 2px solid var(--primary-color);
 }
 
@@ -174,3 +192,15 @@ footer {
   font-size: var(--small-font);
   padding: 1em;
 }
+
+
+/* favorite */
+
+.favorite img {
+  width: 320px;
+  float: left;
+  padding-right: 1rem;
+}
+
+
+/* end favorite */

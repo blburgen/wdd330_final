@@ -14,7 +14,7 @@ export default class ProductData {
   constructor() {}
 
   async getData() {
-    const date = new Date().toISOString().slice(0,10);
+    const date = new Date(Date.now() - 40000000).toISOString().slice(0,10);
     let data;
     if(getLocalStorage('today') === null || getLocalStorage('today').date != date){
       const response = await fetch(baseURL);
