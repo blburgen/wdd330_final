@@ -38,4 +38,10 @@ export default class ProductData {
     setLocalStorage('solar', data);
     return data[data.length - 1];
   }
+
+  async getDataByDate(param) {
+    const response= await fetch(`${baseURL}&date=${param}`);
+    const data = await convertToJson(response);
+    return data;
+  }
 }
