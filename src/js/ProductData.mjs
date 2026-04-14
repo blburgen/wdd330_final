@@ -27,11 +27,14 @@ export default class ProductData {
   }
 
   async getSolarData(){
-    const date = new Date().toISOString().slice(0,10);
-    const yesterday = new Date(Date.now() - 600000000).toISOString().slice(0,10);
-    let data;
-    const response = await fetch(`${solarURL}&startDate=${yesterday}&endDate=${date}`);
-    data = await convertToJson(response);
+    const response = await fetch(solarURL);
+    if(response.status == 503){
+      console.log(response);
+      console.log("Error: Status 503 Service Unavailable")
+      return null;
+    }
+    const data = await convertToJson(response);
+    console.log(data);
     setLocalStorage('solar', data);
     return data[data.length - 1];
   }
