@@ -22,6 +22,12 @@ export default class HomeDetails {
     
     // the product details are needed before rendering the HTML
     this.renderProductDetails();
+    const cartItems = getLocalStorage("favorite-cart") || [];
+    for(let i = 0; i < cartItems.length; i++){
+      if(cartItems[i].date === this.product.date){
+        document.getElementById('addToCart').innerText = "Image in Favorites";
+      };
+    };
 
     this.solar = await this.dataSource.getSolarData();
     this.renderSolarDetails();
@@ -35,11 +41,14 @@ export default class HomeDetails {
   addProductToCart() {
     const cartItems = getLocalStorage("favorite-cart") || [];
     for(let i = 0; i < cartItems.length; i++){
-      if(cartItems[i].date === this.product.date)
+      if(cartItems[i].date === this.product.date){
+        document.getElementById('addToCart').innerText = "Image in Favorites";
         return;
+      };
     };
     cartItems.push(this.product);
     setLocalStorage("favorite-cart", cartItems);
+    document.getElementById('addToCart').innerText = "Image in Favorites";
   }
 
   renderProductDetails() {
@@ -62,6 +71,7 @@ function productDetailsTemplate(product) {
   document.getElementById('imagelink').textContent = product.hdurl;
 
   document.getElementById('information').innerHTML = product.explanation;
+  
 }
 
 function solarDetailsTemplate(solar) {
