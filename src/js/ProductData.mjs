@@ -41,7 +41,9 @@ export default class ProductData {
 
   async getDataByDate(param) {
     const response= await fetch(`${baseURL}&date=${param}`);
+    console.log(response);
     const data = await convertToJson(response);
+    console.log(data);
     return data;
   }
 }

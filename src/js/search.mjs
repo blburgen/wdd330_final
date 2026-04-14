@@ -1,5 +1,5 @@
 import ProductData from "./ProductData.mjs";
-import HomeDetails from "./HomeDetails.mjs";
+import SearchDetails from "./SearchDetails.mjs";
 import { loadHeaderFooter, getParam } from "./utils.mjs";
 
 loadHeaderFooter();
@@ -13,3 +13,9 @@ document.getElementById('date').setAttribute('max', today);
 let param = getParam("date");
 
 document.getElementById('date').value = param;
+
+if(param){
+    const dataSource = new ProductData();
+    const productList = new SearchDetails(dataSource, param);
+    productList.init();
+}

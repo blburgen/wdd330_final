@@ -202,5 +202,21 @@ footer {
   padding-right: 1rem;
 }
 
+.item{
+  margin: 1.5rem;
+  border: var(--dark-grey) 1px solid;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.item button{
+  clear: left;
+  margin-top: 1rem;
+}
+
+.item img{
+  margin-bottom: 1rem;
+}
+
 
 /* end favorite */
