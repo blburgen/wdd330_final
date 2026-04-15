@@ -227,51 +227,56 @@ footer {
   height: 50px;
   animation: spin 1s linear infinite;
 }
-@keyframes spin { 100% { transform: rotate(360deg); } }
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
-.hidden{
+.hidden {
   display: none;
 }
 
-button{
+button {
   border-radius: 1rem;
 }
 
-button:hover{
+button:hover {
   box-shadow: 5px 5px var(--tertiary-color);
 }
 
-button:disabled{
+button:disabled {
   background-color: var(--primary-color);
   color: var(--dark-grey);
   cursor: default;
 }
 
-.card{
+.card {
   margin-top: 1rem;
 }
 
-.form{
+.form {
   display: flex;
   justify-content: center;
   align-content: center;
   margin: 1rem;
 }
 
-form, input {
+form,
+input {
   font-size: larger;
 }
 
 input {
   margin-left: 1rem;
-  padding: .5rem;
+  padding: 0.5rem;
   border-radius: 1rem;
 }
 
-input:hover{
+input:hover {
   cursor: pointer;
 }
 
-label{
+label {
   align-self: center;
 }
