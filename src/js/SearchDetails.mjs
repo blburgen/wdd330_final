@@ -41,6 +41,7 @@ export default class SearchDetails {
     const div = document.createElement("div");
     div.classList.add("card");
     let img;
+    // determins if the image is a video or a regular image
     if(this.product.media_type == "video"){
       img = document.createElement("video");
       img.width = "360";
@@ -56,6 +57,7 @@ export default class SearchDetails {
     }
 
     const p = document.createElement("p");
+    // determins if the image is a video is so the regular url is used
     if(this.product.media_type == "video"){
       p.innerHTML = `&copy;${this.product.date} <a href=${this.product.url}>${this.product.url}</a><br>
       ${this.product.explanation}`;

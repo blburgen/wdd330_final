@@ -19,9 +19,15 @@ document.getElementById("date").value = param;
 
 // If there is a date set by the user the information will be rendered on the page
 if (param) {
-  document.querySelector(".loading").classList.remove("hidden");
-  const dataSource = new ProductData();
-  const productList = new SearchDetails(dataSource, param);
-  productList.init();
+
+  if(param > yesterday){
+    document.querySelector(".loading").classList.remove("hidden");
+    document.querySelector(".loading").innerText = "Date must be in the past" 
+  } else {
+    document.querySelector(".loading").classList.remove("hidden");
+    const dataSource = new ProductData();
+    const productList = new SearchDetails(dataSource, param);
+    productList.init();
+  }
   
 }
