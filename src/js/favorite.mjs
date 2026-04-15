@@ -3,8 +3,6 @@ import { loadHeaderFooter } from "./utils.mjs";
 
 loadHeaderFooter();
 
-
-
 function renderFavorites() {
     let favoritelist = getLocalStorage('favorite-cart');
     let favorite = document.getElementById('favorite');

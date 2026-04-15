@@ -50,7 +50,6 @@ export default class SearchDetails {
       const alternate = this.product.media_type + " of " + this.product.title;
       img.alt = alternate;
     }
-    console.log(img);
 
     const p = document.createElement("p");
     if(this.product.media_type == "video"){
@@ -62,7 +61,6 @@ export default class SearchDetails {
     }
     div.appendChild(img);
     div.appendChild(p);
-    console.log(div);
     const hero = document.getElementById("hero");
     const div1 = document.createElement("div");
     const button = document.createElement("button");
