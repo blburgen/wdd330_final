@@ -16,12 +16,16 @@
   <body>
     <header class="divider" id="main-header"></header>
     <main class="divider">
+      <h1>Search By Day</h1>
       <form action="" method="get">
-        <label for="date">Date:</label>
-        <input type="date" name="date" id="date" />
+        <div class="form">
+          <label for="date">Date:</label>
+          <input type="date" name="date" id="date" />
+        </div>
         <button type="submit">Find Image of Date</button>
       </form>
       <div id="hero"></div>
+      <div class="loading hidden"><p class="spinner"></p>Loading!  If it is taking to long to load try refreshing the page or choose a different date.</div>
     </main>
     <footer id="main-footer"></footer>
   </body>

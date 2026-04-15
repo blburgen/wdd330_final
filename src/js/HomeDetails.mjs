@@ -26,6 +26,7 @@ export default class HomeDetails {
     for(let i = 0; i < cartItems.length; i++){
       if(cartItems[i].date === this.product.date){
         document.getElementById('addToCart').innerText = "Image in Favorites";
+        document.getElementById('addToCart').disabled = true;
       };
     };
 
@@ -53,6 +54,7 @@ export default class HomeDetails {
 
   renderProductDetails() {
     productDetailsTemplate(this.product);
+    document.querySelector(".loading").classList.add("hidden");
   }
 
   renderSolarDetails(){

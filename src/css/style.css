@@ -218,3 +218,60 @@ footer {
 }
 
 /* end favorite */
+
+.spinner {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin { 100% { transform: rotate(360deg); } }
+
+.hidden{
+  display: none;
+}
+
+button{
+  border-radius: 1rem;
+}
+
+button:hover{
+  box-shadow: 5px 5px var(--tertiary-color);
+}
+
+button:disabled{
+  background-color: var(--primary-color);
+  color: var(--dark-grey);
+  cursor: default;
+}
+
+.card{
+  margin-top: 1rem;
+}
+
+.form{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin: 1rem;
+}
+
+form, input {
+  font-size: larger;
+}
+
+input {
+  margin-left: 1rem;
+  padding: .5rem;
+  border-radius: 1rem;
+}
+
+input:hover{
+  cursor: pointer;
+}
+
+label{
+  align-self: center;
+}

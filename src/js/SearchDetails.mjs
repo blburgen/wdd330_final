@@ -27,15 +27,19 @@ export default class SearchDetails {
   addProductToCart() {
     const cartItems = getLocalStorage("favorite-cart") || [];
     for(let i = 0; i < cartItems.length; i++){
-      if(cartItems[i].date === this.product.date)
+      if(cartItems[i].date === this.product.date){
         return;
+      }
     };
     cartItems.push(this.product);
     setLocalStorage("favorite-cart", cartItems);
+    document.getElementById("addToCart").innerHTML = "Image in Favorites";
+    document.getElementById("addToCart").disabled = true;
   }
 
   async renderProductDetails() {
     const div = document.createElement("div");
+    div.classList.add("card");
     let img;
     if(this.product.media_type == "video"){
       img = document.createElement("video");
@@ -65,10 +69,22 @@ export default class SearchDetails {
     const div1 = document.createElement("div");
     const button = document.createElement("button");
     button.id = "addToCart";
+    const cartItems = getLocalStorage("favorite-cart") || [];
     button.innerHTML = "Add to Favorites";
+    for(let i = 0; i < cartItems.length; i++){
+      if(cartItems[i].date === this.product.date){
+        button.innerHTML = "Image in Favorites";
+        button.disabled = true;
+        break;
+      }
+      
+    };
     div1.appendChild(button);
     hero.appendChild(div);
     hero.appendChild(div1);
+    
+    
+    document.querySelector(".loading").classList.add("hidden");
   }
 
 }

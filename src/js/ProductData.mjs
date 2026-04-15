@@ -40,6 +40,13 @@ export default class ProductData {
 
   async getDataByDate(param) {
     const response= await fetch(`${baseURL}&date=${param}`);
+    if(response.status == 503){
+      const loading = document.querySelector(".loading");
+      loading.innerHTML("Server Not responding.  Please refresh page or choose a different date.")
+      console.log(response);
+      console.log("Error: Status 503 Service Unavailable")
+      return null;
+    }
     const data = await convertToJson(response);
     return data;
   }
