@@ -30,13 +30,13 @@ body {
   .grid {
     display: grid;
     grid-template-columns: 5fr 2fr;
-  } 
+  }
 }
 
 aside {
-    padding: 10px;
-    align-content: center;
-  }
+  padding: 10px;
+  align-content: center;
+}
 
 .bold {
   font-weight: 900;
@@ -193,7 +193,6 @@ footer {
   padding: 1em;
 }
 
-
 /* favorite */
 
 .favorite img {
@@ -202,21 +201,20 @@ footer {
   padding-right: 1rem;
 }
 
-.item{
+.item {
   margin: 1.5rem;
   border: var(--dark-grey) 1px solid;
   border-radius: 1rem;
   padding: 1rem;
 }
 
-.item button{
+.item button {
   clear: left;
   margin-top: 1rem;
 }
 
-.item img{
+.item img {
   margin-bottom: 1rem;
 }
-
 
 /* end favorite */

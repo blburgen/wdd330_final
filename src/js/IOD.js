@@ -4,7 +4,6 @@ import { loadHeaderFooter } from "./utils.mjs";
 
 loadHeaderFooter();
 
-
 const dataSource = new ProductData();
 const listElement = document.getElementById("IOD");
 const productList = new HomeDetails(dataSource, listElement);
